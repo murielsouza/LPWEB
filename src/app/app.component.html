@@ -1,0 +1,25 @@
+<h1>Disciplinas</h1>
+<table>
+  <thead>
+    <th>Codigo</th>
+    <th>Nome</th>
+    <th>Detalhes</th>
+  </thead>
+  <tbody>
+    <tr *ngFor = "let disciplina of disciplinas">
+      <td>{{disciplina.codigo}}</td>
+      <td> {{disciplina.nome}}</td>
+      <td><button (click)="selecionar(disciplina)">Detalhes</button> </td>
+    </tr>
+  </tbody>
+</table>
+<ul>
+  <li *ngFor="let disciplina of disciplinas" type = "none">
+    <p *ngIf="selecionado == disciplina">
+      {{disciplina.codigo}}<br>
+      {{disciplina.nome}}<br>
+      {{disciplina.prof.nome}}<br>
+      {{disciplina.descricao}}<br>
+    </p>
+  </li>
+</ul>
